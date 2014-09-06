@@ -1,0 +1,3 @@
+A/DT passenger/NN plane/NN has/VBZ crashed/VBN shortly/RB after/IN take-off/NN from/IN Kyrgyzstan/NNP 's/POS capital/NN ,/, Bishkek/NNP ,/, killing/VBG a/DT large/JJ number/NN of/IN those/DT on/IN board/NN ./.
+The/DT head/NN of/IN Kyrgyzstan/NNP 's/POS civil/JJ aviation/NN authority/NN said/VBD that/IN out/IN of/IN about/IN 90/CD passengers/NNS and/CC crew/NN ,/, only/RB about/IN 20/CD people/NNS have/VBP survived/VBN ./.
+The/DT Itek/NNP Air/NNP Boeing/NNP 737/CD took/VBD off/RP bound/VBN for/IN Mashhad/NNP ,/, in/IN north-eastern/JJ Iran/NNP ,/, but/CC turned/VBD round/NN some/DT 10/CD minutes/NNS later/RB ./.
