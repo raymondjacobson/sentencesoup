@@ -37,6 +37,5 @@ def tagSentenceStructure(sentence_file_name):
 	return 'output.txt'
 	# print java_output.stdout
 
-# MAIN
-getTaggedString("the cat went to the tree")
+
 
