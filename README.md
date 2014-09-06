@@ -1,4 +1,5 @@
-# MHacks 2014
+# Sentence Soup
+## MHacks 2014
 
 @mengsquared
 @modaum
