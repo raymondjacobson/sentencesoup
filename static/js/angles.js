@@ -1,3 +1,8 @@
+function updateScroll(element){
+  var element = document.getElementById(element);
+  element.scrollTop = element.scrollHeight;
+}
+
 var sentenceSoupApp = angular.module('sentenceSoupApp', ['firebase', 'ngRoute']);
 
 // helpers
@@ -27,7 +32,6 @@ sentenceSoupApp.config(function($routeProvider) {
 
 // controllers for routes
 sentenceSoupApp.controller('defaultCtrl', function($scope) {
-  
 });
 sentenceSoupApp.controller('storyCtrl', ["$scope", "$firebase",
   function($scope, $firebase) {
@@ -35,6 +39,12 @@ sentenceSoupApp.controller('storyCtrl', ["$scope", "$firebase",
     var sync = $firebase(ref);
     var syncObject = sync.$asObject();
     syncObject.$bindTo($scope, "story");
+    $scope.$watch("story", function(value) {
+      var element = document.getElementById("story");
+      setTimeout(function() {
+        updateScroll("story");
+      });
+    });
   }
 ]);
 sentenceSoupApp.controller('artCtrl', ["$scope", "$firebase",
