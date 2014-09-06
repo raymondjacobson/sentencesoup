@@ -1,10 +1,8 @@
-import unirest
 from alchemyapi import AlchemyAPI
 alchemyapi = AlchemyAPI()
 import json
 
 def getConceptOfString(string):
-	print "string in getConceptOfString: " + string
 	concepts_of_string = []
 	response = alchemyapi.concepts('text', string)
 	if response['status'] == 'OK':
