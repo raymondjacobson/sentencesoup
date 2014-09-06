@@ -1,1 +1,1 @@
-the/DT dog/NN climbed/VBD a/DT tree/NN in/IN the/DT forest/NN
+the/DT dog/NN climbed/VBD a/DT tree/NN in/IN the/DT forest/NN in/IN africa/NN

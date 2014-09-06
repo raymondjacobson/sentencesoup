@@ -78,17 +78,18 @@ def processSentences(array_of_sentences):
 		# add words to correct type
 		for concept in concepts:
 			for sentence_type in parts_of_sentences.keys():
-				if not(parts_of_sentences[sentence_type].has_key(concept)):
-					parts_of_sentences[sentence_type][concept] = []
 				for tag in parts_of_sentences_types[sentence_type]:
 					if (types_and_words.has_key(tag)):
+						if not(parts_of_sentences[sentence_type].has_key(concept)):
+							parts_of_sentences[sentence_type][concept] = []
 						parts_of_sentences[sentence_type][concept] += types_and_words[tag]
 
 
 		print "parts_of_sentences: "
 		for key in parts_of_sentences.keys():
 			for concept in concepts:
-				if len(parts_of_sentences[key][concept]) > 0:
+				if parts_of_sentences[key].has_key(concept):
+				# if len(parts_of_sentences[key][concept]) > 0:
 					print key + ", " + concept
 					print parts_of_sentences[key][concept]
 				 
@@ -96,6 +97,5 @@ def processSentences(array_of_sentences):
 
 
 # main
-setup()
-two_sentences = ["the dog climbed a tree in the forest"]
+two_sentences = ["the dog climbed a tree in the forest in africa"]
 processSentences(two_sentences)
