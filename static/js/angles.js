@@ -1,4 +1,4 @@
-var sentenceSoupApp = angular.module('sentenceSoupApp', ['ngRoute']);
+var sentenceSoupApp = angular.module('sentenceSoupApp', ['firebase', 'ngRoute']);
 
 // helpers
 var addScript = function(script_name) {
@@ -14,6 +14,11 @@ sentenceSoupApp.config(function($routeProvider) {
       templateUrl: '/static/partials/_story.html',
       controller: 'storyCtrl'
     })
+    .when('/art', {
+      templateUrl: '/static/partials/_art.html',
+      controller: 'artCtrl'
+    })
+
     .otherwise({
       templateUrl: 'static/partials/_404.html',
       controller: '404Ctrl'
@@ -22,11 +27,24 @@ sentenceSoupApp.config(function($routeProvider) {
 
 // controllers for routes
 sentenceSoupApp.controller('defaultCtrl', function($scope) {
-  $scope.message = 'default';
+  
 });
-sentenceSoupApp.controller('storyCtrl', function($scope) {
-  $scope.message = 'story';
-});
+sentenceSoupApp.controller('storyCtrl', ["$scope", "$firebase",
+  function($scope, $firebase) {
+    var ref = new Firebase("https://sentencesoup.firebaseio.com/story");
+    var sync = $firebase(ref);
+    var syncObject = sync.$asObject();
+    syncObject.$bindTo($scope, "story");
+  }
+]);
+sentenceSoupApp.controller('artCtrl', ["$scope", "$firebase",
+  function($scope, $firebase) {
+    var ref = new Firebase("https://sentencesoup.firebaseio.com/story");
+    var sync = $firebase(ref);
+    var syncObject = sync.$asObject();
+    syncObject.$bindTo($scope, "story");
+  }
+]);
 sentenceSoupApp.controller('404Ctrl', function($scope) {
   $scope.message = '404 - an error';
 });

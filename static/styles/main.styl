@@ -1,1 +1,98 @@
-// main style
+/* COLORS */
+BASE_GRAY = #333
+DARK_GRAY = lighten(BASE_GRAY, 20%)
+LIGHT_GRAY = lighten(BASE_GRAY, 95%)
+MED_GRAY = lighten(BASE_GRAY, 50%)
+PURPLE = #7142F0
+RED = #EC3B32
+GREEN = #14D259
+
+.purple
+  color PURPLE
+.red
+  color RED
+.green
+  color GREEN
+
+/* MIXINS */
+fader(prop, seconds)
+  -webkit-transition prop seconds linear
+  -moz-transition prop seconds linear
+  -ms-transition prop seconds linear
+  -o-transition prop seconds linear
+  transition prop seconds linear
+
+/* TYPE */
+h1
+  font-size 4em
+  font-weight bold
+  letter-spacing 5px
+  margin 0
+
+h2
+  margin 0
+
+h6
+  padding 0
+  margin 0
+
+p
+  font-family Georgia, serif
+  letter-spacing 1px
+  line-height 1.3em
+  text-align justify
+
+a
+  text-decoration none
+  color inherit
+  &:hover
+    color MED_GRAY
+
+html, body
+  padding 0
+  margin 0
+  background LIGHT_GRAY
+  color DARK_GRAY
+  font-family 'Bree Serif', Georgia, serif
+
+#container
+  padding-top 20px
+  width 70%
+  margin 0 auto
+
+#nav
+  ul
+    list-style none
+    margin 0
+    padding 0
+  li
+    text-align center
+    display inline-block
+    margin-right 20px
+  i
+    font-size 20px
+
+#page
+  min-height 400px
+  margin 40px auto 0px
+  padding 20px 40px
+  border 1px solid DARK_GRAY
+
+#story
+  height 600px
+  overflow scroll
+
+#art
+
+footer
+  margin 20px auto
+  p
+    text-align center
+    font-family 'Bree Serif'
+    color MED_GRAY
+    font-size 10px
+    text-transform uppercase
+    font-weight bold
+    letter-spacing 1px
+    margin 0
+    padding 2px

@@ -19,16 +19,33 @@
 <link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Fauna+One' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
-<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css' ) }}" media="all">
 
 <script type='text/javascript' src="{{ url_for('static', filename='js/angular.min.js' )}}"></script>
 <script type='text/javascript' src="{{ url_for('static', filename='js/angular-route.min.js' )}}"></script>
+<script src="https://cdn.firebase.com/js/client/1.0.21/firebase.js"></script>
+<script src="https://cdn.firebase.com/libs/angularfire/0.8.2/angularfire.min.js"></script>
   
 </head>
-<body> 
-  <div ng-view></div>
+<body>
+  <div id="container">
+  <div id="nav">
+  <ul>
+    <li color='green'><a href="#"><i class="fa fa-book"></i><h6>Story</h6></a></li>
+    <li><a href="#art"><i class="fa fa-paint-brush"></i><h6>Art</h6></a></li>
+  </div>
+    <h1 class='purple'>Sentence Soup</h1>
+    <h2 class='green'>Text me @ 301-467-2873</h2>
+    <div id="page">
+      <div ng-view></div>
+    </div>
+  </div>
+  <footer>
+    <p>Designed with <i class="red fa fa-heart"></i> at MHacks 2014</p>
+    <p>@raymondjacobson @modaum @mengsquared</p>
+  </footer>
   <script type='text/javascript' src="{{ url_for('static', filename='js/angles.js' )}}"></script>
 </body>
 </html>

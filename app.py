@@ -1,6 +1,9 @@
 from flask import Flask, request, session, g, redirect, url_for, abort, \
     render_template, flash, _app_ctx_stack
-app = Flask(__name__)
+from flask.ext.triangle import Triangle
+
+app = Flask(__name__, static_path='/static')
+Triangle(app)
 
 @app.route("/")
 def index():
